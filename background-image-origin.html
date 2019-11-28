@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 30px;
+            padding: 10px;
+        }
+    .box1{
+        width: 300px;
+        height: 300px;
+        border:10px solid transparent;
+        background-image:url(bg.jpg);
+        background-size:100% 100%;
+        background-origin:border-box;
+    }
+    .box2{
+        width: 300px;
+        height: 300px;
+        border:10px solid yellow;
+        background-image:url(bg.jpg);
+        background-size:100% 100%;
+        background-origin:padding-box;
+    }
+    .box3{
+        width: 300px;
+        height: 300px;
+        border:10px solid yellow;
+        background-image:url(bg.jpg);
+        background-size:100% 100%;
+        background-origin:content-box;
+    }
+    .box4{
+        width: 400px;
+        height: 200px;
+        background-image:url(bg.jpg);
+        background-size:cover;
+    }
+    .box5{
+        width: 400px;
+        height: 200px;
+        background-image:url(bg.jpg);
+        background-size:contain;
+    }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class="box1">border-box</div>
+    <div class="box2">padding-box</div>
+    <div class="box3">content-box</div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>

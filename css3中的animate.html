@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+        padding: 0;
+        margin:0;
+        }
+    @keyframes run{
+        0%{
+            left:0;
+            top:0;
+        }
+        25%{
+            left:200px;
+            top:0;
+        }
+        50%{
+            left:200px;
+            top:200px;
+        }
+        75%{
+            left:0;
+            top: 200px;
+        }
+        100%{
+            left:0;
+            top:0;
+        }
+        }
+
+    @keyframes changecolor{
+        from{
+            background-color:red;
+        }
+        25%{
+            background-color:pink;            
+        }
+        50%{
+            background-color:blue;
+        }
+        75%{
+            background-color:green;            
+        }
+        100%{
+            background-color:black;
+        }
+    }
+    /* .wrapper{
+        position: absolute;
+        width:200px;
+        height:200px;
+        background:tomato; */
+        /* animation:run 4s infinite 2s; */
+        /* animation-name:run;/*动画名字*/
+        /*animation-delay:2s;/*延迟时间*/
+        /*animation-duration:4s;/*一轮动画的时间*/
+        /*animation-iteration-count:infinite;/*永久循环*/
+        /*animation-direction:alternate-reverse;/*normal为正向动画，reverse为反向动画，alternate先正向再反向,alternate-reverse先反向再正向*/
+        /*left:0;
+        top:0;
+    } */
+    .wrapper{
+        position: absolute;
+        width:200px;
+        height:200px;
+        background-color:green;
+        animation:run 4s cubic-bezier(0.215, 0.610, 0.355, 1) ,changecolor 4s cubic-bezier(0.215, 0.610, 0.355, 1) both;
+    }
+    .wrapper:hover{
+        animation-play-state: paused;/*animation悬停状态，值可以是running或者pause*/
+    }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper"></div>
+</body>
+</html>

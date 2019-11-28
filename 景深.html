@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        :root{
+            height:100%;
+        }
+        body{
+            perspective:800px;/*设置景深,类似投影*/
+            height:100%;
+        }
+        .content1,
+        .content2,
+        .content3,
+        .content4,
+        .content5{
+            width:200px;
+            height:200px;
+            background-image: url("image/bg.jpg");
+            background-size:cover;/*铺满盒子*/
+            position: absolute;
+            top: 200px;
+            transform:rotatey(45deg);
+            animation:move .5s steps(5,end)  infinite alternate ;
+        }
+        .content1{
+            left:100px;
+        }
+        .content2{
+            left:300px;
+        }
+        .content3{
+            left:500px;
+        }
+        .content4{
+            left:700px;
+        }
+        .content5{
+            left:900px;
+        }
+        @keyframes move{
+            0%{
+                transform: rotateY(-90deg);
+            }
+            100%{
+                transform: rotateY(90deg);
+            }
+        }
+
+
+        
+        
+    </style>
+</head>
+<body>
+    <div class="content1"></div>
+    <div class="content2"></div>
+    <div class="content3"></div>
+    <div class="content4"></div>
+    <div class="content5"></div>
+    <script type="text/javascript">
+        document.body.onmousemove=function(e){
+            this.style.perspectiveOrigin=(e.pageX+'px '+e.pageY+'px');
+            /*perspectiveOrigin才是核心，设置人眼的位置*/
+        }
+    </script>
+</body>
+</html>

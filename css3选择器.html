@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 包含选择器 */
+        .demo a{
+            color: pink;
+            text-decoration: none;
+        }
+        .box{
+            border: 1px solid red;
+        }
+        /* 直接子类选择器 */
+        .box>p{
+            background-color: green;
+            color:yellow;
+        }
+
+        /* 相领选择器,操作的是f*/
+        div +.text{
+            background: rebeccapurple;
+        }
+        /* 兄弟选择器,操作的是F*/
+        div ~ .innerText{
+            background: darkorange;
+            color: aliceblue;
+        }
+        .attrSelectors{
+            border: 1px solid green;
+        }
+
+        /*属性选择器1*/
+        .attrSelectors div[date]{
+            color:purple;
+        }
+        
+        /*属性选择器2,属性值为a-text*/
+        .attrSelectors div[date='a-text']{
+            background-color: blue
+        }
+        /*属性选择器3，属性值中有独立的a*/
+        .attrSelectors div[date~='a']{
+            background: greenyellow;
+        }
+        /*属性选择器4，值以c或者c-打头*/
+        .attrSelectors div[date|='c']{
+            background-color: brown;
+        }
+        /*属性选择器5,属性名以什么开头*/
+        .attrSelectors div[date^='d']{
+            background-color: cornflowerblue;
+        }
+        /*属性选择器6*/
+        .attrSelectors div[date$='text']{
+            border-radius: 10px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <!-- 选择器有四种 E F包含选择器,E>F直接子类选择器,E+F相领选择器,E~F兄弟选择器 -->
+
+
+    <!-- E F，不止可以包括儿子，还可以包括全部满足条件的后代 -->
+    <div class="demo">
+        E F
+        <div><a href="">11111</a></div>
+        <a href="">22222</a>
+    </div>
+
+
+    <!-- E>F只能选中满足条件的直接子类，不能包括全部后代 -->
+    <div class="box">
+        E>F
+        <p>直接子类</p>
+        <p>直接子类</p>
+        <p>直接子类</p>
+        <div><p>间接子类</p></div>
+    </div>
+
+    <!-- E+F 后一个满足条件的兄弟元素结点-->
+    <div class="wrapper">
+        E+F
+        <p>111</p>
+        <p class="wrapperText">11111</p>
+        <div>111</div>
+        <p class="text">111</p>
+        <p>111</p>
+    </div>
+
+
+    <!-- E~F,满足条件的同级兄弟元素结点-->
+    <div>
+        E~F
+        <div>wwww</div>
+        <p class="innerText">ssss</p>
+        <div>wwww</div>
+        <p class="innerText">ssss</p>
+        <div>wwww</div>
+        <p class="innerText">ssss</p>
+    </div>
+
+
+
+    <!-- 属性选择器,可以是自定义属性,class也是属性 -->
+    <!-- E[att];带有att属性的标签
+    E[att='val'];att属性值为val的标签元素
+    E[att~='val'];选出属性名为att,属性值为val的独立的元素，如class
+    E[att|='val'];选出属性名为att的，属性值为val或者val-的元素
+    E[att^='val'];选出属性名为att，属性值以val开头的，和正则一样
+    E[att$='val'];选出属性名为att的，属性值以val结尾的
+    E[att *= 'val'];选出属性名为att的，属性值中有带有val的，不管在哪 -->
+
+
+
+    <div class="attrSelectors">
+        属性选择器
+        <div date='a-text'>ccc</div>
+        <div date='b-text  a'>ccc</div>
+        <div date='c-text'>ccc</div>
+        <div date='d-text'>ccc</div>
+        <div date='e-text'>ccc</div>
+        <div date='f-text'>ccc</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

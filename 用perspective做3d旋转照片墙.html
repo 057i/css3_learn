@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        :root{
+            height: 100%;
+        }
+        body{
+            transform-style:preserve-3d;
+            perspective:2000px;
+            height: 100%;
+        }
+        .wrap{
+            border:1px solid paleturquoise;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left:calc(50%);
+            top:calc(50%);
+            transform:translate(-50%,-50%);
+            transform-style:preserve-3d;
+            transform: rotateY(0deg);
+            animation:move 20s infinite;
+        }
+        .wrap div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-image: url("image/bg.jpg");
+            background-size:cover;
+            display: inline-block;
+
+        }
+        .wrap div:nth-of-type(1){
+            transform:rotatey(45deg) translatez(500px);
+        }
+
+        .wrap div:nth-of-type(2){
+            transform:rotatey(90deg) translatez(500px);
+        }
+
+        .wrap div:nth-of-type(3){
+            transform:rotatey(135deg) translatez(500px);
+
+        }
+
+        .wrap div:nth-of-type(4){
+            transform:rotatey(180deg) translatez(500px);
+        }
+        .wrap div:nth-of-type(5){
+            transform:rotatey(225deg) translatez(500px);
+
+        }
+
+        .wrap div:nth-of-type(6){
+            transform:rotatey(270deg) translatez(500px);
+
+        }
+
+        .wrap div:nth-of-type(7){
+            transform:rotatey(315deg) translatez(500px);
+
+        }
+
+        .wrap div:nth-of-type(8){
+            transform:rotatey(360deg) translatez(500px);
+
+        }
+        @keyframes move {
+            0%{
+                transform:rotateY(0deg);
+            }
+            100%{
+                transform:rotateY(360deg);
+
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="content1"></div>
+        <div class="content2"></div>
+        <div class="content3"></div>
+        <div class="content4"></div>
+        <div class="content5"></div>
+        <div class="content6"></div>
+        <div class="content7"></div>
+        <div class="content8"></div>
+    </div>
+    <script type="text/javascript">
+        document.body.onmousemove=function (e) {
+            this.style.perspectiveOrigin=e.pageX+'px '+e.pageY+'px';/*移动眼睛的位置*/
+        }
+    </script>
+
+
+</body>
+</html>

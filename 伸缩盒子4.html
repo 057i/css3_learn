@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        .wrapper{
+            width: 600px;
+            height:500px;
+            display:flex;
+            flex-direction:row;
+            border:1px solid pink;
+            /* justify-content:space-between; */
+            overflow:hidden;
+            resize:both;
+        }
+        .content{
+            border:1px solid green;
+            box-sizing: border-box;
+            flex-basis:400px;
+            flex-shrink:1;/*缩盒子*/
+        }
+        .content:nth-of-type(1){
+            padding: 80px;
+            flex-shrink:2;/**/
+        }
+        /*flex-shrink用于子元素超出父级的范围后使用伸缩盒子按照权重，按照权重比例将子元素收缩
+        缩盒子计算公式 子元素=各区域大小分别乘以所对饮的权值*/
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">aaa</div>
+        <div class="content">bbb</div>
+        <div class="content">ccc</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .wrapper{
+        width: 600px;
+        height: 400px;
+        position: absolute;
+        left:calc(50% - 300px);
+        top:200px;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        border:1px solid hotpink;
+        overflow: hidden;
+        resize: both;
+    }
+    .header,.footer,.left,.right{
+        flex:1 1 auto;
+    }
+    .header{
+        background-color: pink;
+    }
+    .footer{
+        background-color:royalblue; 
+    }
+    .contain{
+        flex:2 2 50%;
+        background-color: aliceblue;
+        display: flex;
+    }
+    .left{
+        background-color: #f89;
+    }
+    .right:{
+        background: #f79;
+    }
+    .center{
+        flex:2 2 50%;
+        background-color:violet;
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="contain">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

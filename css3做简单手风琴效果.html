@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .wrapper{
+            /* height: 400px; */
+            border: 1px solid pink;
+        }
+        .wrapper ul li{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+
+        .img1{
+            background: red;
+        }
+        .img2{
+            background: green;
+        }
+        .img3{
+            background: blue;
+        }
+        .img4{
+            background: yellow;
+        }
+        .wrapper ul:hover li{
+            float: left;
+            width: 100px;
+            height: 200px;
+            transition: 2s all;
+        }
+        .wrapper ul li:hover{
+            width: 500px;
+            height: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+            /* 鼠标挪进ul后下面的li宽度统统变小，然后找到hover上去的li把它宽度变大，就实现了手风琴效果 */
+        <ul>
+            <li class="img1"></li>
+            <li class="img2"></li>
+            <li class="img3"></li>
+            <li class="img4"></li>
+        </ul>
+        
+    </div>
+    
+</body>
+</html>

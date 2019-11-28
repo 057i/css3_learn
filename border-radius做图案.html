@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wrapper1,.wrapper2,.wrapper3,.wrapper4{
+            width: 100px;
+            height: 100px;
+        }
+        .wrapper1{
+            position: relative;
+        }
+        .wrapper1 div{
+            position: absolute;
+            width:100px;
+            height: 100px;
+            border-style:solid;
+            border-color:red;
+        }
+        .box1{
+            border-top-left-radius: 100px;
+            border-bottom-right-radius:100px;
+        }
+        .box2{
+            border-top-right-radius: 100px;
+            border-bottom-left-radius:100px;
+        }
+        .wrapper2 div{
+            width: 50%;
+            height:50%;
+            float: left;
+            border-style:solid;
+            border-color:red;
+            box-sizing: border-box;
+        }
+        .wrapper2 div:nth-of-type(1){
+            border-top-left-radius:50px;
+            border-top-right-radius:50px;
+            border-bottom-left-radius:50px;
+        }
+        .wrapper2 div:nth-of-type(2){
+            border-top-left-radius:50px;
+            border-top-right-radius:50px;
+            border-bottom-right-radius:50px;
+        }
+        .wrapper2 div:nth-of-type(3){
+            border-top-left-radius:50px;
+            border-bottom-left-radius:50px;
+            border-bottom-right-radius:50px;
+        }
+        .wrapper2 div:nth-of-type(4){
+            border-top-right-radius:50px;
+            border-bottom-left-radius:50px;
+            border-bottom-right-radius:50px;
+        }
+        .wrapper3{
+            border:1px solid red;
+            overflow: hidden;
+            border-radius: 100%;
+        }
+        .wrapper3 div{
+            width: 50%;
+            height:50%;
+            float: left;
+            box-sizing: border-box;
+        }
+        .wrapper3 div:nth-of-type(1){
+            border-bottom: 1px solid red;
+            border-bottom-right-radius: 100%;
+        }
+        .wrapper3 div:nth-of-type(2){
+            border-bottom: 1px solid red;
+            border-bottom-left-radius: 100%;
+        }
+        .wrapper3 div:nth-of-type(3){
+            border-top: 1px solid red;
+            border-top-right-radius: 100%;
+        }
+        .wrapper3 div:nth-of-type(4){
+            border-top: 1px solid red;
+            border-top-left-radius: 100%;
+        }
+        .wrapper4{
+            position: relative;
+
+        }
+        .wrapper4 div:nth-of-type(1){
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            border-style: solid;
+            border-color:red;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            box-sizing: border-box;
+            background-color: red;
+
+        }
+        .wrapper4 div:nth-of-type(2){
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            box-sizing: border-box;
+            border-style: solid;
+            border-color:red;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-right-radius: 100%;
+        }
+        .wrapper4 div:nth-of-type(3){
+            position: absolute;
+            top: 45%;
+            left: 10px;
+            width: 0;
+            height: 0;
+            border-top:40px solid red;
+            border-left:40px solid transparent;
+            border-right:40px solid transparent;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper1">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <div class="wrapper2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="wrapper3">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="wrapper4">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+<div class="wrapper5"></div>
+</body>
+</html>

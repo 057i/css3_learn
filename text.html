@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        margin: 20px;
+        border:1px solid pink;
+    }
+    .upper{
+        text-transform:uppercase;
+    }
+    .lower{
+        text-transform:lowercase;
+
+    }
+    .first{
+        text-transform:capitalize;
+    }
+    .normal{
+        width: 200px;
+        white-space:normal;/*默认处理，多个空格合并成一个*/
+    }
+    .pre{
+        width: 200px;
+        white-space:pre;/*文字超出不换行，保留用户输入的一切数据以及格式*/
+    }
+    .nowrap{
+        width:200px;
+        white-space:nowrap;/*基于默认处理下，文字超出不换行，即使输入的格式有换行也不换行*/
+    }
+    .pre-wrap{
+        width: 200px;
+        white-space:pre-wrap;/*保留用户输入的格式以及数据，超出部分自动换行*/
+    }
+    .pre-line{
+        width: 200px;
+        white-space:pre-line;/**/
+    }
+    .keep-all{
+        width: 300px;
+        word-break:keep-all;/*多种语言强制不换行*/
+    }
+    .break-all{
+        width:300px;
+        word-break:break-all;/*多种语言不兼顾单词完整性超出强制换行*/
+    }
+    .break-word{
+        width: 300px;
+        word-break:break-word;/*尽量兼顾单词的完整性超出换行显示*/
+    }
+
+
+    
+    
+    </style>
+</head>
+<body>
+    <div>
+        <div class="upper">转成成大写字母：jnvksdnvkjsnk</div>
+        <div class="lower">转成小写字母：DHJASHDIIHI</div>
+        <div class="first">将第一个字母转大写：fnjdsknkjfnsikjdj</div>
+    </div>
+    <div>
+        <div class="normal">gfdsgggggg     gggggggg   ggggg   gggggggggggg</div>
+        <div class="pre">hgfhhg  jhg   jghjgh  j     ggjkjhkjhkjhkjhkj
+            hkhjytuyt</div>
+
+        <div class="nowrap">fnjdskfj   kdskjfjdsjflk   dsff     jl;fdsfdsf
+            fds</div>
+        
+        <div class="pre-wrap">fbdsjhfdgrsj   kd  gfh  kjdsfhkdskjfhkdsfkjhsdkj nfkjj</div>
+        
+        <div class="pre-line">fndsjkfnkdsjkfndsjkfn
+            fjmdsklfj md sl kfmds
+            fm
+            dnjsaknka
+            ndsklmfnsdkjfn
+        </div>
+    </div>
+    <div>
+        word-break
+        <div class="keep-all">fklsdmflkdslkmfdsklffjkdnsnkjfnkjdsk考虑fmkldsmlkf考虑是高科技司OK放假没事的离开父母莱克斯顿</div>
+        <div class="break-all">fnkjdsnfndskfndsfhjeshfjkdskhfjdsnfkjgnjkfdskn是否合适的空间方面的师傅你空间里睡大觉nfvjkdsnkfnskj</div>
+        <div class="break-word">jfkdslmfldsknfjkdsnfkjgkldsmflklklsadnflkkmgf年房价开始你快解放手机电脑</div>
+    </div>
+
+</body>
+</html>

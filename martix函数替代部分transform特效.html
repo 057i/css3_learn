@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding: 0;
+            margin:0;
+        }
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            background-image: url(image/bg.jpg);
+            background-size: cover;
+            /*transform:matrix(1,0,0,1,50,50);!*替代了transform:translate()*!*/
+            transform:matrix(2,0,0,3,0,0);/*替代了transform:scale()*/
+
+        }
+        /*制作倒影*/
+        .wrapper2{
+            width: 200px;
+            height: 200px;
+            background-image: url(image/bg.jpg);
+            background-size: cover;
+            transform:matrix(-1,0,0,-1,0,0);
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper"></div>
+<div class="wrapper2"></div>
+
+</body>
+</html>

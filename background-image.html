@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 200px;
+        height: 400px;
+        background-image: url("bg.jpg");
+        padding: 30px;
+        margin:40px;
+        border: 10px solid transparent;
+        background-repeat: no-repeat;
+        background-origin:border-box;
+    }
+    .wrapper{
+        /*background的默认展示区是从padding开始展示背景的，*/
+        width: 300px;
+        height: 300px;
+        background-image: url(bg.jpg),url(bg.jpg);
+        border:10px solid pink;
+        padding: 20px;
+        /*background-size:50% 100%,50% 100%;!*一个容器内放两张图片*!*/
+        background-size:20px 20px,20px 20px;/*如果不设置缩放会平铺*/
+        /* background-position: 0 0,150px 0; */
+        /*background-repeat: repeat-x repeat-y;!*错误写法，不能同时存在*!*/
+        background-repeat:space no-repeat;
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="wrapper"></div>
+</body>
+</html>

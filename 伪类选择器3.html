@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* :first-of-type,:last-of-type,:only-of-type,nth-of-type,:nth-last-of-type为一组，选中的是父级元素下第几个什么元素 */
+        /* 找出同级下第一个span标签元素 */
+        span:first-of-type{
+            color:red;
+        }
+        找出同级下第一个p标签元素
+        p:last-of-type{
+            color:chartreuse;
+        }
+        /* 找出span在同级元素下只有一个的span,同级下可以有其他标签元素*/
+        span:only-of-type{
+            color:cornflowerblue;
+        }
+
+        /* 找同级元素下偶数个span */
+        span:nth-of-type(2n){
+            background: yellow;
+        }
+
+
+
+    
+    
+    </style>
+</head>
+<body>
+    <div>
+        <span>11111</span>
+        <p>11111</p>
+        <span>11111</span>
+        <p>11111</p>
+        <span>11111</span>
+        <p>11111</p>
+    </div>
+    <ul>
+        <li><span>这是唯一的span</span></li>
+        <p>1111</p>
+    </ul>
+
+
+</body>
+</html>

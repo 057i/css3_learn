@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 600px;
+            height: 400px;
+            display: flex;
+            flex-direction:row;
+            overflow: hidden;
+            resize:both;
+
+            border:1px solid pink;
+        }
+        .wrapper div{
+            width: 100px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        .wrapper div:nth-of-type(1){
+            flex-grow:3;
+            background-color:grey;
+        }
+        .wrapper div:nth-child(2){
+            flex-grow:2;/**/
+        }
+
+        /*flex-basis，主轴为水平方向且flex-basis和width同时使用时，如果只写flex-basis或者flex-basis>width时，代表元素可以拉升最小宽度(也就是把width覆盖了)；
+                当flex-basis<width时，flex<realwidth<width;当主轴为垂直方向时，只要将上面的width改为height即可，作用是一样的
+        
+        */
+        .wrapper2{
+            width: 300px;
+            display: flex;
+            flex-direction: column;/*竖向为主轴*/
+            border: 1px solid green;
+            overflow: hidden;
+            resize: both;
+        }
+        .wrapper2 div{
+            height: 100px;
+            box-sizing: border-box;
+            border:1px solid red;
+        }
+        .wrapper2 div:nth-of-type(1){
+            flex-basis: 50px;/*这时候主轴为垂直方向的，所以这个时候的flex-basis为height*/
+        }
+        .wrapper2 div:nth-of-type(2){
+            flex-basis: 120px;
+        }  
+        
+    
+    
+    </style>
+</head>
+<body>
+    flex-grow的计算方式：当前区域拉伸后的宽度=父级盒子剩余大小/总权值*当前盒子占得权值
+    小盒子宽高大小相同的情况
+    <div class="wrapper">
+        <div>aa</div>
+        <div>bb</div>
+        <div>cc</div>
+        <div>dd</div>
+    </div>
+
+    <div class="wrapper2">
+        <div>aa</div>
+        <div>bb</div>
+        <div>cc</div>
+        <div>dd</div>
+    </div>
+
+
+</body>
+</html>

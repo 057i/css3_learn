@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* 会被同级元素影响判断的5个伪元素选择器，first-child,last-child,only-child */
+    
+    /* 判断p是不是div下的同级兄弟元素结点的第一个，满足条件则选中 */
+    div p:first-child{
+        background: red;
+    }
+
+    /* 判断div下的当前的p是不是同级兄弟元素结点的最后一个，满足条件则选中操作 */
+    div:not([class]) p:last-child{
+        background: green;
+    }
+
+    /* 判断当前的div是否是父级标签下的唯一一个子元素结点，是的话选中操作 */
+    div:only-child{
+        border: 1px solid orange;
+    }
+    
+    /* 选不出来，会判断.box下的span的同级元素是不是只有当前的span一个，同级下有其他元素就失败，是的话满足条件才会被选中 */
+    .box span:only-child{
+        color:yellow;
+    }
+
+
+    /* :nth-child()用来筛选出满足条件的子元素，括号里面可以填数学式 ,下标从1开始*/
+    .wrapper span:nth-child(2n+1){    /*选出wrapper下是奇数位的span*/
+        background-color: brown;
+    }
+
+    /* 这里因为ntn-child()选中的是第2n位，而span所在的是奇数位，所以选不到 */
+    .wrapper span:nth-child(2n){   /*选出wrapper下下标是偶数位的span*/
+        color: red;
+    }
+
+/*ntn-last-child()用来选出满足条件是同级元素下是倒数第几个的元素结点*/
+    span:nth-last-child(1){ /*选出在同级元素下是倒数第一个的span*/
+        border: 1px solid pink;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div>
+        <span>11111</span>
+        <p>11111</p>
+        <span>11111</span>
+        <p>11111</p>
+        <span>11111</span>
+        <p>11111</p>
+    </div>
+    <div class="wrapper">
+        <span>222</span>
+        <p>222</p>
+        <span>222</span>
+        <p>222</p>
+        <span>222</span>
+        <p>222</p>
+    </div>
+    <span>44444</span>
+
+    <div class="box">
+        <span>555</span>
+        <p>666</p>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid pink;
+            height: 30px;
+            width: 300px;
+        }
+        /* 取到当前元素下内容为空的，类似JS中的hasChildNodes,但是这里的注释不算内容 */
+        div:empty{
+            height: 30px;
+            width: 200px;
+            border: 1px solid black;
+        }
+
+
+        
+        input:checked + span{
+            background: green;
+            color:yellow;
+        }
+        input:checked +span::after{
+            content:'你选中的这个按钮';
+            margin: 10px;
+            color:yellow;
+        }
+
+
+        /* :enable和:disable用来操作可用元素和不可用元素的样式 */
+        input:enabled{
+            outline: none;
+            border: 1px solid lightblue;
+        }
+        input:disabled{
+            border: 1px solid green;
+        }
+
+        /* :ready-only和:read-write只读和可读可写 */
+        input :read-only{
+            border: 1px solid red;
+        }
+
+
+
+
+        
+    
+    
+    </style>
+</head>
+<body>
+    <!-- ：empty -->
+    <div>112233</div>
+    <div> </div>
+    <div><!-- aaaaa --></div>
+    <div></div>
+
+
+    <!-- :checked,只限制于input的type为radio或者checkbox的-->
+    <ul>
+        <li><label for="blue"></label><input type="radio" id="blue"><span>blue</span></li>
+        <li><label for="red"></label><input type="radio" id="red"><span>red</span></li>
+        <li><label for="green"></label> <input type="radio" id="green"><span>green</span></li>
+    </ul>
+
+    
+    <ul>
+        <li><input type="text" disabled></li>
+        <li><input type="text" enable></li>
+        <li><input type="text" disabled></li>
+        <li><input type="text" readonly value="什么事都做不了"></li>
+    </ul>
+
+
+
+
+
+</body>
+</html>

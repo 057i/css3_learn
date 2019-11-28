@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .demo1,.demo2{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color:black;
+            color:white;
+        }
+
+        /*.demo1{*/
+        /*    animation:move 4s steps(1,start) ;//start是提前一步，保留下一帧的状态，一直到动画结束，回到第一帧状态*/
+        /*}*/
+        /*等同于*/
+        .demo1{
+            animation: move 4s step-start;
+        }
+
+        .demo2{
+            top:200px;
+            /*animation:move 4s steps(1,end) forwards;//end是保留当前帧的状态直到动画结束，忽略最后一帧结束后回到第一帧状态*/
+        }
+        /*等同于*/
+        .demo2{
+            animation:move 4s step-end forwards;
+        }
+        @keyframes move{
+            0%{
+                left:0px;
+
+            }
+            25%{
+                left:100px;
+            }
+            50%{
+                left:200px;
+            }
+            75%{
+                left:300px;
+            }
+            100%{
+                left:400px;
+            }
+        }
+        /*打字效果*/
+        .code{
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 81px;
+            /*float: right;*/
+            font-family: monospace;
+            position: relative;
+        }
+        .code:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 90px;
+            top:0;
+            left:0;
+            background-color: #fff;
+            border-left: 2px solid black;
+            animation:codewrap 7s steps(7,end) forwards,codemove 1s steps(1,end)  infinite;
+        }
+        @keyframes codemove{
+            0%{
+                border-left-color:rgba(0,0,0,0)
+            }
+            50%{
+                border-left-color: rgba(0,0,0,1);
+            }
+            100%{
+                border-left-color:rgba(0,0,0,0)
+            }
+        }
+        @keyframes codewrap{
+            0%{
+                left:0;
+            }
+            100%{
+                left:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--    <div class="demo1">start</div>-->
+<!--    <div class="demo2">end</div>-->
+    <div class="code">abcdefg</div>
+</body>
+</html>
